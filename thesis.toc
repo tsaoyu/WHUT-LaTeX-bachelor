@@ -24,4 +24,4 @@
 \contentsline {subsection}{\numberline {4.2}未来发展}{17}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}官方认证}{17}{subsection.4.3}
 \contentsline {section}{\numberline {5}致谢}{18}{section.5}
-\contentsline {section}{Reference}{19}{section.5}
+\contentsline {section}{参考文献}{19}{section.5}
