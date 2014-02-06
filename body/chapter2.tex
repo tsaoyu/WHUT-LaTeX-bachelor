@@ -1,0 +1,153 @@
+\section{基本文档功能的使用}
+\subsection{字体字号的控制}
+对于中国用户来说， 学习\LaTeX 最大的困难首先不是阅读各种各样的宏包文档
+而是需要面对\LaTeX 中一个最为困难的问题：实现汉字的显示和控制。在
+\LaTeX 创始的时候Kunth老爷子没有想到这世界上还有这么复杂的文字，好在我们
+的时代进步。加之无数前人的努力，开发出了一套适合中文汉字显示的\LaTeX 宏包，本论文模板正是使用这个宏包作为开发的基础。
+
+普通大概会花上两三天的时间来纠结中文显示的问题，这一部分是\LaTeX 本身的不完美造成的，另一部分是由于我们盲目的查询，复制，粘贴网络上来源不明的代码造成的。这样做非常容易造成宏包间的冲突，从而导致编译失败。学习\LaTeX 的最好方法是从最简单的样式开始，逐渐接触模板的控制方法这样才能少走弯路。
+\subsubsection{字体}
+根据中文汉字支持宏包ctexart的参考文档，模板中预置的常用字体一共有五种，他们分别是：宋体，黑体，仿宋，楷书， 隶书。对应的控制方式如下：
+\begin{center}
+\begin{tabular}{ccccc}
+\hline \rule[-2ex]{0pt}{5.5ex} { 宋体} & { 黑体} & { 仿宋} & { 隶书} & {楷书} \\ 
+\hline \rule[-2ex]{0pt}{5.5ex} \textbackslash songti &\textbackslash  heiti  & \textbackslash fangsong & \textbackslash lishu & \textbackslash kaishu \\ 
+\hline 
+\end{tabular}  
+\end{center}
+这些字体基本满足了武汉理工大学本科生毕业论文中所要求的字体的需求，当然如果你有更多的字体需求可以参照ctexart的参考文档进行进一步的设置。Linux用户请用
+Adobe的免费字体进行替换，当然对于Linux用户来说这些都不算问题,Macintosh 用户请用类似的苹果系统字体进行替换。
+\subsubsection{字号}
+大部分的字号不需要用户自行调整，所有的标题格式和正文格式已经完成了预置。为了防止特殊情况，在此对于字号的控制方法进行简单的介绍。\LaTeX 中的字体定义是pt作为单位的，而Word中的要求则大部分以小一号这样的方式定义的。通常的，小四号对应12pt，亦是本模板正文中所使用的字号。中文字号的设置命令是\textbackslash zihao\{字号\}, 在字号前加-（负号）则代表小一号。如 \textbackslash zihao\{4\} 代表四号字， \textbackslash zihao\{-4\} 则代表小四号。建议用户在正文不要使用这些命令，更不要使用这些命令来完成格式的调整。
+\subsection{数学公式和证明}
+\subsubsection{ 插入数学公式}
+\LaTeX 之父 Stanford教授 Knuth 用\$ 符号界定数学公式，暗指着每个好的公式都是无价之宝。正是\TeX 系统让这些公式变得美丽而和谐，同时输入数学公式变成简单愉快的过程。
+不过你需要的基本是\AmS math宏包交给你的，列举我最喜欢的一个公式。
+如，
+\[  e^{i\pi}+1=0\]
+下面举例如何使用预置的文献撰写格式，此部分原作者是北京大学计算机系的于江生。
+\begin{theorem}[L\'{e}vy\index{L\'{e}vy 定理}]
+令 $F(x),\varphi(t)$ 分别为随机变量 $X$ 的分布函数和特征函数。
+假定 $F(x)$ 在 $a+h$ 和 $a-h (h>0)$ 处连续，则有
+\begin{align}
+ \label{Levy theorem}  % 方程的标记可以是专有名词
+F(a+h)-F(a-h)&=\lim_{T\rightarrow\infty}\frac{1}{\pi}\int^{T}_{-T}\frac{\sin ht}{t} 
+e^{-ita}\varphi(t)dt
+\end{align}
+\end{theorem}
+\begin{proof}
+  从略。感兴趣的读者可以参考……。
+\end{proof}
+
+
+\begin{corollary}
+密度函数和特征函数之间有如下的关系。
+\begin{align}
+ \label{DensityCharacteristic}   % 自定义的标记
+  f(x)&=\frac{1}{2\pi}\int^{+\infty}_{-\infty} e^{-itx}\varphi(t)dt
+\end{align}
+\end{corollary}
+
+\begin{proof}
+由公式 (\ref{Levy theorem}) 和 Lebesgue 定理，我们有
+\begin{align*}
+ \frac{F(x+\Delta x)-F(x)}{\Delta x}&=\frac{1}{2\pi}\int^{+\infty}_{-\infty}
+ \frac{\sin(t\Delta x/2)}{t\Delta x/2} e^{-it(x+\Delta x/2)}\varphi(t) dt\\
+  f(x)&=\frac{1}{2\pi}\int^{+\infty}_{-\infty}\lim_{\Delta x\rightarrow 0}
+ \frac{\sin(t\Delta x/2)}{t\Delta x/2} e^{-it(x+\Delta x/2)}\varphi(t) dt\\
+  &=\frac{1}{2\pi}\int^{+\infty}_{-\infty} e^{-itx}\varphi(t)dt\qedhere
+\end{align*}
+\end{proof}
+
+我们知道特征函数的定义是
+
+\begin{align}
+ \label{section1:characteristic}   % 标记中注明了章节号
+ \varphi(t)&= E(e^{itX})=\int^{+\infty}_{-\infty} e^{itx} f(x)dx
+\end{align}
+
+L\'{e}vy 定理在分布函数和特征函数之间搭建了一座桥梁。
+对比 (\ref{DensityCharacteristic}) 和 (\ref{section1:characteristic}) 可见，
+密度函数和特征函数之间的关系非常巧妙。
+
+                                                                                                                 
+\attention 在\TeX 环境里，数学公式的表达是很自然的，绝大多数命令就是英文的数学专有名词或它们的缩写，
+如果你以前读过英文的数学文献，记忆这些命令是不难的。如果你没读过，正好通过记忆这些命令来了解术语。
+
+
+手头有个命令快速寻查表是很方便的，我用的是 Hypertext Help with \LaTeX ，网上可以搜到，是免费的。
+\subsubsection{预置环境}
+相信你已经发现了，模板中预置了有关的环境信息和这些环境下的字体样式。你只要在合适的位置，使用这些环境就能够让你文章变得简洁而美观。环境的样式如下：
+\begin{center}
+
+\begin{tabular}{c|c|c|c}
+\hline\hline
+环境 & 含义 & 环境& 含义\\\hline\hline
+
+%thankspage&致谢页&code&代码\\\hline
+theorem &定理&lemma &引理  \\\hline
+example &例&algorithm &算法  \\\hline
+definition &定义  &axiom &公理  \\\hline
+property &性质  &proposition &命题 \\\hline
+corollary& 推论 &remark &注解  \\\hline
+condition &条件  &conclusion &结论  \\\hline
+assumption &假设  &prove &证明 \\\hline
+proof&证明 &&\\ \hline\hline
+\end{tabular}
+
+\end{center}
+\subsection{图形表格等浮动对象}
+\index{贝叶斯方法}贝叶斯方法主要用于小样本数据分析，它利用参数先验分布和
+后验分布之差异进行统计推断，其一般步骤是：
+
+\begin{enumerate}
+ \item 构建概率模型，包括参数的先验分布。
+ \item 给定观察数据，计算参数的后验分布。
+ \item 分析模型的效果，如有必要，回到第一步。
+\end{enumerate}
+
+\begin{example}
+下面，我们给一个表格的例子，一个图形的例子。
+
+\begin{center}
+\begin{table}[!ht]     % 强制在原位显示表格
+\centering
+
+\begin{tabular}{l|ccccc|c}
+  $_X$\hspace{3mm} $^Y$&$y_1$&$y_2$&$\cdots$&$y_j$&$\cdots$\\
+\hline
+$x_1$   &$p_{11}$&$p_{12}$&$\cdots$&$p_{1j}$&$\cdots$&$p_{1\cdot}$\\
+$x_2$   &$p_{21}$&$p_{22}$&$\cdots$&$p_{2j}$&$\cdots$&$p_{2\cdot}$\\
+$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$\\
+$x_i$   &$p_{i1}$&$p_{i2}$&$\cdots$&$p_{ij}$&$\cdots$&$p_{i\cdot}$\\
+$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$\\
+\hline
+   &$p_{\cdot 1}$&$p_{\cdot 2}$&$\cdots$&$p_{\cdot j}$&$\cdots$&1
+
+\end{tabular}
+\end{table}
+\end{center}
+
+%在表\ref{marginal distribution} 中，$p_{\cdot %j}=\sum\limits_i p_{ij}$，
+%类似地，$ p_{i\cdot}=\sum\limits_j p_{ij}$。
+\end{example}
+\subsection{插入图片}
+要说\LaTeX 的缺点，其实也不是没有。图文混排能力比较差就是其中一个，相比于其他的商业办公文书软件，\LaTeX 在编辑大量的文字图形内容的时候就显得捉襟见肘了。这时用户就需要其他的专业软件了，比如Adobe公司的InDesign等专业的图文排版软件，来协助我们完成这样的任务了。这同样也是软件和用户双向选择的问题，\LaTeX 的使用人群是以数学物理作为基础的理工科人群。他的强项在于科技文献而非建筑学生的作品集，商科学生的案例答辩，希望用户了解这个常识。
+通过\TeX Studio的图片助手功能，我们可以方便的完成简单的图片内容插入\footnote[1]{图片的大小，位置调整请查询graphicx宏包。}， 支持png，pdf，jpg，eps等格式的图片内容。\\
+\begin{figure}[htbp] 
+\centering
+\includegraphics {figure/logo}
+\caption{武汉理工大学校徽（浮动图片）}
+\label{fig:logo}
+\end{figure}
+\footnotemark[1]
+\subsection{如何张贴源码？}
+采用listing宏包可以完成代码的张贴，在控制文件导演区可以更改listing的设置
+来符合MATLAB,Python，C++等不同语言的需求。
+\begin{lstlisting}[language=C]
+int main(int argc, char ** argv)
+{
+printf("Hello world!\n");
+return 0;
+}
+\end{lstlisting}

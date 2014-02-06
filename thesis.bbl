@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\url{#1}}
+
+\bibitem{王勇姚萍-197}
+\bibauthor{王勇\@, 姚萍\@, 王岚, et~al}\@.
+  \bibtitle{LaTeX与方正书版排版数学论文探讨}\bibmark{[J]}\@.
+  \bibjournal{中国科技期刊研究}\@, \bibyear{2012}\@,
+  \bibvolume{23}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1036\thinspace{}\textnormal{--}\thinspace{}1039}\@.
+
+\bibitem{吴昉张页-198}
+\bibauthor{吴昉\@, 张页}\@.
+  \bibtitle{聆听字体之声——由阿拉伯字体艺术浅议字体设计课程教学改良}\bibmark{[J]}\@.
+  \bibjournal{艺术教育}\@,
+  \bibyear{2010}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{18\thinspace{}\textnormal{--}\thinspace{}19}\@.
+
+\end{thebibliography}

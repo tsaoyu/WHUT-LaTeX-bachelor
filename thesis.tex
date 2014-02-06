@@ -1,0 +1,94 @@
+%%=======================================
+%  WHUT Bachelor Thesis v 0.1b
+%  
+%  Tsao Yu
+%  tsaoyu@tsaoyu.com
+%  Last Modify Date Feb.6,2014
+%%=======================================
+\documentclass[c4size,a4paper]{ctexart}
+                                                            
+%==================== 数学符号公式 ============
+\usepackage{amsmath}                 % AMS LaTeX宏包
+%\usepackage{amssymb}                % 用来排版漂亮的数学公式
+%\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}                % 英文花体字体
+\usepackage{bm}                      % 数学公式中的黑斜体
+\usepackage{bbding,manfnt}           % 一些图标，如 \dbend
+\usepackage{lettrine}                % 首字下沉，命令\lettrine
+\def\attention{\lettrine[lines=2,lraise=0,nindent=0em]{\large\textdbend\hspace{1mm}}{}}
+\usepackage{geometry}                % 页边距调整
+\geometry{top=3.5cm,bottom=3.5cm,left=3.2cm,right=3.2cm}
+%\usepackage{relsize}                % 调整公式字体大小：\mathsmaller,\mathlarger
+%\usepackage{caption2}               % 浮动图形和表格标题样式
+%================= 基本格式预置 ===========================
+\CTEXsetup[nameformat={\bfseries\zihao{-2}},
+            titleformat={\bfseries\zihao{-2}}]{section}
+\CTEXsetup[nameformat={\bfseries\zihao{-3}},
+            titleformat={\bfseries\zihao{-3}}]{subsection}
+\CTEXsetup[nameformat={\bfseries\zihao{-4}},
+            titleformat={\bfseries\zihao{-4}}]{subsubsection}
+\CTEXsetup[format={\Large\bfseries}]{section}
+%================== 图形支持宏包 =========================
+\usepackage{graphicx}                % 嵌入png图像
+\usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
+%\usepackage{subfigure}
+%\usepackage{epsfig}                 % 支持eps图像
+%\usepackage{picinpar}               % 图表和文字混排宏包
+%\usepackage[verbose]{wrapfig}       % 图表和文字混排宏包
+%\usepackage{eso-pic}                % 向文档的部分页加n副图形, 可实现水印效果
+%\usepackage{eepic}                  % 扩展的绘图支持
+%\usepackage{curves}                 % 绘制复杂曲线
+%\usepackage{texdraw}                % 增强的绘图工具
+%\usepackage{treedoc}                % 树形图绘制
+%\usepackage{pictex}                 % 可以画任意的图形
+\usepackage{hyperref}                % 交叉引用
+%==================== 粘贴源代码 =====================
+\usepackage{listings}                 % 粘贴源代码
+%\usepackage{simpsons}       辛普森一家支持包 \bart 巴特 
+%===================   正文开始    ===================
+\begin{document}
+\bibliographystyle{gbt7714-2005}    %论文引用格式
+%===================  定理类环境定义 ===================
+\newtheorem{example}{例}             % 整体编号
+\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{定理}[section]  % 按 section 编号
+\newtheorem{definition}{定义}
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+%==================重定义 ===================
+\renewcommand{\contentsname}{目录}     
+\renewcommand{\abstractname}{\zihao{-2}摘要} % 劳动人民的智慧
+\renewcommand{\refname}{参考文献}     
+\renewcommand{\indexname}{索引}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\proofname}{证明}
+\renewcommand{\algorithm}{算法} 
+
+%============== 封皮和前言 =================
+\input{body/cover}
+\tableofcontents 
+\thispagestyle{empty}
+\include{body/abstract}
+%============== 论文正文   =================
+\include{body/chapter1}      %
+\include{body/chapter2}
+\include{body/chapter3}
+\include{body/chapter4}
+%=============  致谢  ======================
+\include{body/chapter5}
+%============= 参考文献 =====================
+\include{body/reference}
+\clearpage
+\end{document}
+%%%%%%%%%% 结束 %%%%%%%%%%
