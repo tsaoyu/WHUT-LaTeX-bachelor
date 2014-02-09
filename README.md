@@ -24,5 +24,6 @@ in the next few month.
 你的一段宝贵经历。
 
 For any question other than the use of templates please contact me with the following e-mail:
-thesis@tsaoyu.com OR jJ
-如果你有关于本模板的良好意见和建议，请发送到：thesis@tsaoyu.com 。
+thesis@tsaoyu.com OR Just put them in the issue part on the right section of this page.
+如果你有关于本模板的良好意见和建议，请发送到：thesis@tsaoyu.com 或直接在页面右侧的问题一栏中
+提出。
