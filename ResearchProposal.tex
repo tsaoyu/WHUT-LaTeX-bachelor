@@ -1,0 +1,180 @@
+\documentclass[a4paper]{ctexart}
+\usepackage{graphicx} 
+\usepackage[style=1]{mdframed}
+\usepackage{geometry}                % 页边距调整
+\geometry{top=3.5cm,bottom=3.5cm,left=3.2cm,right=3.2cm}
+\begin{document}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\linewidth]{figure/SchoolName}
+\end{figure}
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\zihao{3} \textbf{\fangsong 本科生毕业设计（论文）开题报告}
+\end{center}
+\vskip5cm
+\begin{tabular}{cc}
+{\Large {\textbf{\fangsong 学\quad 生\quad 姓\quad 名：}} } & \underline{\makebox[9cm][c]{\Large {\textbf{\fangsong 曹\quad 宇}}}}\\
+{\Large {\textbf{\fangsong 导师姓名、职称：}} } & \underline{\makebox[9cm][c]{\Large {\textbf{\fangsong 徐海祥}}}}\\
+{\Large {\textbf{\fangsong 所\quad 属\quad 学\quad 院：}} } & \underline{\makebox[9cm][c]{\Large {\textbf{\fangsong 交通学院}}}}\\
+{\Large {\textbf{\fangsong 专\quad 业\quad 班\quad 级：}} } & \underline{\makebox[9cm][c]{\Large {\textbf{\fangsong 船舶与海洋工程1006班}}}}\\
+{\Large {\textbf{\fangsong 设计（论文）题目：}} } & \underline{\makebox[9cm][c]{\Large {\textbf{\fangsong 动力定位控制系统方案设计与仿真}}}}\\
+\end{tabular}
+\vskip 6cm
+\begin{flushright}
+{\Large {\textbf{\fangsong \today}}}
+\end{flushright}
+\pagebreak
+\begin{center}
+{\Large {\textbf{\fangsong 开题报告填写要求}}}
+\end{center}
+\begin{enumerate}
+\item {\large \fangsong 开题报告应根据教师下发的毕业设计（论文）任务书，在教师的指导下由学生独立撰写。}
+\item {\large \fangsong 开题报告内容填写后，应及时打印提交指导教师审阅。}
+\item {\large \fangsong “设计的目的及意义”至少800汉字（外语至少500字），“基本内容和技术方案”至少400汉字（外语至少200字）。进度安排应尽可能详细。}
+\item {\large \fangsong 指导教师意见：学生的调研是否充分？基本内容和技术方案是否已明确？是否已经具备开始设计（论文）的条件？能否达到预期的目标？是否同意进入设计（论文）阶段？}
+\end{enumerate}
+\pagebreak
+\begin{mdframed}
+{\large \textbf{\fangsong 撰写内容要求（可加页）：}}
+
+{\large \fangsong 
+\begin{flushleft}
+1．目的及意义（含国内外的研究现状分析）
+\end{flushleft}
+
+   船舶动力定位系统的出现是为了满足复杂海况下深海钻探的需求，在发展过程中随着半导体技术和高性能计算技术的飞速发展，动力定位系统越来越多地应用于海洋工程船舶、海洋科考船、钻井平台、铺管船等关系着国家军事安全以及经济利益的部门中。动力定位系统正在这些行业中，为国家的经济建设和发展贡献出自己的力量。
+   
+对于动力定位系统的研究，是为了打破国际巨头在此行业内的垄断，发展我国独立自主的成套化动力定位系统。并将其应用于国防安全，石油钻探，海洋科考，通讯服务，海洋作业等重要的部门中，从而提高其工作作业时的安全性，可靠性同时提供一定的经济性。
+
+随着动力定位系统技术的不断发展，现在已经有部分动力定位系统开始应用于豪华游艇上的例子。他们采用了动力定位系统中的控制方法和理论，加上新型的全电吊舱系统喷水推进系统，为动力定位系统开阔更为广阔的市场提供了一个全新的思路。这些全新的思路和方法为我们在动力定位系统的研究指明了一些方向：更为便捷智能的动力定位系统方案，更为安全可靠的动力定位系统设计，更为绿色环保的动力定位目标。伴随着控制技术的进步，船舶动力定位系统在成本上会变得越来越低，原来由于成本因素而无法采用该系统的船舶也将有机会借助动力定位系统完成如限制航区的精确自动航行，风浪条件下的平稳卸货，低速巡航自动规避等技术。
+
+而这所有的进步都离不开动力定位系统控制系统方案设计，从动力定位系统的发展历史可以看出来，第一代动力定位系统所采用的多为PID(比例-积分-微分)控制方法，第二代则开始采用卡尔曼滤波和最优控制理论，第三代则开始采用模糊控制为代表的智能控制理论和方法。随着多学科融合的快速发展，控制理论的最新成果和方法开始越来越迅速地被应用于船舶动力定位系统的控制理论设计中。在国际上，挪威的康斯伯格公司以及挪威科技大学对于船舶动力定位控制方法进行了很多的研究。其预测模型和控制理论走在了世界的前列，在船舶控制方法上取得了很多的成就。而英国的劳斯莱斯公司，荷兰的瓦锡兰公司在船舶动力定位系统所使用的动力定位动力模块上取得了很好的成果。国内的高校和机构中，哈尔滨工程大学，上海交通大学，中船重工708研究所等大专院校和研究院所对于船舶动力定位的智能化进行了一些研究。
+
+}
+\end{mdframed}
+
+\begin{mdframed}
+{\large \fangsong 
+\begin{flushleft}
+2．	研究（设计）的基本内容、目标、拟采用的技术方案及措施
+\end{flushleft}
+
+本论文研究基本内容为船舶动力定位系统的基本控制法研究，以消化吸收经典控制模型和控制理论为基础，同时结合模拟仿真的实际对于模型进行评价和改善。主要包括：船舶运动数学建模，船舶动力学模型，控制中的状态估计算法，船舶运动特性分析，控制算法仿真和评价。
+
+本论文的基本目标为充分了解船舶动力定位的系统组成，通过MATLAB对于船舶动力系统的控制部分进行仿真模拟，掌握卡尔曼滤波的处理方法和途径。在充分了解船舶运动规律的同时，采用神经网络、模糊控制、自学习控制等先进的控制方法对于动力定位系统的控制精度进行更进一步的提升。
+
+拟采用的技术方案和措施，从船舶运动模型入手，结合控制理论在船舶中的应用推导其中的公式定理。从控制理论入手，编写代码对于船舶进行建模和仿真。最终结合船舶操纵专业知识，对于控制系统的算法设计进行评价和分析。 
+
+\begin{flushleft}
+3．	进度安排
+\end{flushleft}
+
+第1周 
+
+根据论文题目收集相关主题资料，包括船舶动力定位运动数学模型、环境载荷计算方法、船舶动力定位控制方法等相关论文资料及出版物。
+
+第2周 
+
+阅读有关资料，形成研究思路，完成开题报告的撰写。
+
+第3-4周 
+\begin{enumerate}
+\item 了解船舶动力定位系统功能、系统构成及工作原理
+\item 分析船舶动力定位运动数学模型
+\item 熟悉MATLAB仿真平台
+\item 完成船舶动力定位系统功能、系统构成及工作原理部分的论文撰写
+
+\end{enumerate}
+
+第5-8周 
+\begin{enumerate}
+\item 学习状态估计相关理论和方法
+\item 完成船舶动力定位控制算法设计，绘制算法流程框图
+\item 完成船舶动力定位系统数学建模部分的论文撰写
+\end{enumerate}
+
+}
+\end{mdframed}
+
+\begin{mdframed}
+{\large \fangsong 
+
+第9-11周
+\begin{enumerate}
+\item 分析定位船舶运动（高频运动和低频运动）特性分析
+\item 完成控制算法程序编写并调试
+\item 完成船舶动力定位系统滤波部分的论文撰写
+\end{enumerate}
+
+
+第12-13周
+\begin{enumerate}
+\item 完成船舶动力定位控制算法仿真与结果分析
+\item 根据分析结果完善控制算法
+\item 对一艘平台供应船的定位过程进行仿真和分析
+\item 完成船舶动力定位控制算法部分的论文撰写
+\end{enumerate}
+
+
+第14- 周
+\begin{enumerate}
+\item 完成论文撰写
+\item 上传论文
+\item 准备论文答辩
+ 
+\end{enumerate}
+
+
+\begin{flushleft}
+4．阅读的参考文献不少于15篇（其中近五年外文文献不少于3篇）
+\end{flushleft}
+
+[1].	李殿璞, 船舶运动与建模. 1999, 哈尔滨市: 哈尔滨工程大学出版社. 277.
+
+ [2].	贾欣乐与杨盐生, 船舶运动数学模型  机理建模与辩识建模. 1999, 大连市: 大连海事大学出版社. 443.
+ 
+ [3].	刘应中盛振邦, 船舶原理. 2004, 上海市: 上海交通大学出版社.
+ 
+ [4].	边信黔, 付明玉与王元慧, 船舶动力定位. 2011, 北京市: 科学出版社. 367.
+ 
+ [5].	戴仰山, 沈进威与宋竞正, 船舶波浪载荷. 2007, 北京市: 国防工业出版社. 216.
+ 
+ [6].	Smallwood, D.A. and L.L. Whitcomb, Model-based dynamic positioning of underwater robotic vehicles: theory and experiment. Oceanic Engineering, IEEE Journal of, 2004. 29(1): p. 169-186.
+ 
+ [7].	Cadet, O. Introduction to Kalman Filter and its use in dynamic positioning systems. in Proceedings of Dynamic Positioning Conference. 2003.
+ }
+ \end{mdframed}
+ 
+ \begin{mdframed}
+ {\large \fangsong
+ [8].	Fossen, T.I., Handbook of marine craft hydrodynamics and motion control. 2011: John Wiley  Sons.
+ 
+ [9].	Fossen, T.I., Guidance and control of ocean vehicles. Vol. 199. 1994: Wiley New York.
+ 
+[10].	Rasmussen, C.E., Gaussian processes for machine learning. 2006.
+
+[11].	Aström, K.J. and R.M. Murray, Feedback systems: an introduction for scientists and engineers. 2010: Princeton university press.
+
+[12].	Sørensen, A.J., S.I. Sagatun and T.I. Fossen, Design of a dynamic positioning system using model-based control. Control Engineering Practice, 1996. 4(3): p. 359-368.
+
+[13].	Saelid, S., N.A. Jenssen and J.G. Balchen, Design and analysis of a dynamic positioning system based on Kalman filtering and optimal control. Automatic Control, IEEE Transactions on, 1983. 28(3): p. 331-339.
+
+[14].	Holvik, J. Basics of dynamic positioning. in Dynamic Positioning Conference, Kongsberg Simrad Inc. 1998.
+
+[15].	Warren, J., J. Adams and H. Molle, Arduino for Robotics. 2011: Springer.
+
+\begin{flushleft}
+5．指导教师意见
+
+\end{flushleft}
+\vskip7.8cm
+\begin{flushright}
+指导教师（签名）：\quad \quad \quad 
+
+\today
+\end{flushright}                  
+}
+\end{mdframed}
+\bibliographystyle{gbt7714-2005}
+\end{document}
