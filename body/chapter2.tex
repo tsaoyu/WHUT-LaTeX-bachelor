@@ -1,11 +1,15 @@
-\section{基本文档功能的使用}
+\section{开始撰写论文}
+在\LaTeX 中论文的组织形式是严格按照结构化写作的方式展开的，章节之间层次分明，段落之间关系紧密。要做到这一点就需要熟悉结构化写作的一般过程，首先需要通过\TeX 命令定义各章节的标题。
+\begin{verbatim}
+\section{开始撰写论文}              %对应为  第2章 开始撰写论文
+\subsection{标题与正文格式控制}     %对应为   2.1 标题与正文格式的控制 
+\subsubsection{字体的控制命令}      %对应为   2.1.1 字体的控制命令
+\end{verbatim}
+由于采用了\verb|ctex|的\verb|article|类作为论文的基本类，所以定义标题的层级最多为二级标题。当你的论文出现三级标题如\verb|2.1.1.1|的时候，请考虑修改文章层级结构以适应格式化排版的要求。（四级标题多出现于书籍以及科技专著中，毕业论文作为文档类其出现此类三级标题的情况较为罕见）在一个低级标题之后出现的一个高级标题会使得文档当前内容跳出作用域，通过这样的方式整个文章的整体脉络就可以很清晰地显现出来。
 \subsection{字体字号的控制}
-对于中国用户来说， 学习\LaTeX 最大的困难首先不是阅读各种各样的宏包文档
-而是需要面对\LaTeX 中一个最为困难的问题：实现汉字的显示和控制。在
-\LaTeX 创始的时候Kunth老爷子没有想到这世界上还有这么复杂的文字，好在我们
-的时代进步。加之无数前人的努力，开发出了一套适合中文汉字显示的\LaTeX 宏包，本论文模板正是使用这个宏包作为开发的基础。
+字体字号的处理是借助了\href{http://mirror.hust.edu.cn/CTAN/language/chinese/ctex/doc/ctex.pdf}{ctex}宏包实现的，查看该文档在中文格式处理方面节省许多时间。在宏包中对于处理字体和字号的方法进行详细的阐述，在这里简单地进行一个介绍。在介绍控制方式之前，我想首先介绍一个概念：形式和内容的分离。在我们熟知的排版系统中，形式和内容是一个密不可分的整体，两者相生相伴无法分离。从我们写下一段话，并选中这段话然后再设定字体和字号开始形式已经开始附加到我们想要表达的内容中了。但是在\LaTeX 中，所有的内容（也就是正文及相关附录）是不包含任何关于格式的信息的。这样就做到了形式与内容的彻底分离，是\LaTeX 区别于任何一个排版系统的根本原因。
 
-普通大概会花上两三天的时间来纠结中文显示的问题，这一部分是\LaTeX 本身的不完美造成的，另一部分是由于我们盲目的查询，复制，粘贴网络上来源不明的代码造成的。这样做非常容易造成宏包间的冲突，从而导致编译失败。学习\LaTeX 的最好方法是从最简单的样式开始，逐渐接触模板的控制方法这样才能少走弯路。
+实现内容与形式的剥离是一个痛苦的过程，我们需要摒弃我们懒惰的直觉并开始高度抽象化的思考，通过这样一个过程等到内容与形式再度同一，我们所见到的必定是一个涅槃过后的新生。这种痛苦就从字体和字号开始：
 \subsubsection{字体}
 根据中文汉字支持宏包ctexart的参考文档，模板中预置的常用字体一共有五种，他们分别是：宋体，黑体，仿宋，楷书， 隶书。对应的控制方式如下：
 \begin{center}
@@ -15,134 +19,155 @@
 \hline 
 \end{tabular}  
 \end{center}
-这些字体基本满足了武汉理工大学本科生毕业论文中所要求的字体的需求，当然如果你有更多的字体需求可以参照ctexart的参考文档进行进一步的设置。Linux用户请用
-Adobe的免费字体进行替换，当然对于Linux用户来说这些都不算问题,Macintosh 用户请用类似的苹果系统字体进行替换。
+这些字体基本满足了武汉理工大学本科生毕业论文中所要求的字体的需求。
+
+但是，从我们开始书写自己的毕业论文\TeX 代码开始，这些命令就应该永远地被我们所抛弃！ 为什么我们要这样做呢？这还是得从形式与内容分离的技术手段开始讨论，首先一个好的\TeX 模板一定是高度形式化的，它包含了论文格式所需要的所有格式信息。既然一个模板包括了所有需要的格式信息，那么在正文中就不应该出现任何重复的定义。其次，普通人对于字体的了解程度之低决定了他们没有权利来决定字体的选择和运用。加粗的黑体，倾斜的宋体，满世界到处飞的\verb|Times New Roman|无限拉低了论文的品质和观感。
 \subsubsection{字号}
-大部分的字号不需要用户自行调整，所有的标题格式和正文格式已经完成了预置。为了防止特殊情况，在此对于字号的控制方法进行简单的介绍。\LaTeX 中的字体定义是pt作为单位的，而Word中的要求则大部分以小一号这样的方式定义的。通常的，小四号对应12pt，亦是本模板正文中所使用的字号。中文字号的设置命令是\textbackslash zihao\{字号\}, 在字号前加-（负号）则代表小一号。如 \textbackslash zihao\{4\} 代表四号字， \textbackslash zihao\{-4\} 则代表小四号。建议用户在正文不要使用这些命令，更不要使用这些命令来完成格式的调整。
-\subsection{数学公式和证明}
-\subsubsection{ 插入数学公式}
-\LaTeX 之父 Stanford教授 Knuth 用\$ 符号界定数学公式，暗指着每个好的公式都是无价之宝。正是\TeX 系统让这些公式变得美丽而和谐，同时输入数学公式变成简单愉快的过程。
-不过你需要的基本是\AmS math宏包交给你的，列举我最喜欢的一个公式。
-如，
-\[  e^{i\pi}+1=0\]
-下面举例如何使用预置的文献撰写格式，此部分原作者是北京大学计算机系的于江生。
-\begin{theorem}[L\'{e}vy\index{L\'{e}vy 定理}]
-令 $F(x),\varphi(t)$ 分别为随机变量 $X$ 的分布函数和特征函数。
-假定 $F(x)$ 在 $a+h$ 和 $a-h (h>0)$ 处连续，则有
-\begin{align}
- \label{Levy theorem}  % 方程的标记可以是专有名词
-F(a+h)-F(a-h)&=\lim_{T\rightarrow\infty}\frac{1}{\pi}\int^{T}_{-T}\frac{\sin ht}{t} 
-e^{-ita}\varphi(t)dt
-\end{align}
-\end{theorem}
-\begin{proof}
-  从略。感兴趣的读者可以参考……。
-\end{proof}
+和字体类似，字号也是形式与内容分离的一大忌讳。对于规范的科技论文而言，什么地方该用多大的字体是一个规定。用户只能嫁艾斯维尔随艾斯维尔，嫁斯普林格随斯普林格了。但是出于人道主义，还是提一下改变字体的方式，使用\verb|\zihao{4}|命令来规定四号字体，在前面加负号表示小四\verb|\zihao{-4}|.
+\subsection{图片及表格的处理}
+写到这里就想黑一下现在所谓的“官方\LaTeX 模板”现象，不可否认毕业论文模板的确是宣传\LaTeX 千载难逢的好机会，同时也是刚性需求最大的用户群体。但是仔细观察这些模板，好大喜功的多，低调行事的少，虎头蛇尾的多，兢兢业业的少。有多少所谓的“官方\LaTeX 模板”宣称，不需要任何基础两天时间就能够做出来如何如何的效果，搞得和传销组织一样。事实果真如此么？不加任何指导的同学在国内平均网速的前提下，两天也就是能够完成软件的安装和配置吧。
 
-
-\begin{corollary}
-密度函数和特征函数之间有如下的关系。
-\begin{align}
- \label{DensityCharacteristic}   % 自定义的标记
-  f(x)&=\frac{1}{2\pi}\int^{+\infty}_{-\infty} e^{-itx}\varphi(t)dt
-\end{align}
-\end{corollary}
-
-\begin{proof}
-由公式 (\ref{Levy theorem}) 和 Lebesgue 定理，我们有
-\begin{align*}
- \frac{F(x+\Delta x)-F(x)}{\Delta x}&=\frac{1}{2\pi}\int^{+\infty}_{-\infty}
- \frac{\sin(t\Delta x/2)}{t\Delta x/2} e^{-it(x+\Delta x/2)}\varphi(t) dt\\
-  f(x)&=\frac{1}{2\pi}\int^{+\infty}_{-\infty}\lim_{\Delta x\rightarrow 0}
- \frac{\sin(t\Delta x/2)}{t\Delta x/2} e^{-it(x+\Delta x/2)}\varphi(t) dt\\
-  &=\frac{1}{2\pi}\int^{+\infty}_{-\infty} e^{-itx}\varphi(t)dt\qedhere
-\end{align*}
-\end{proof}
-
-我们知道特征函数的定义是
-
-\begin{align}
- \label{section1:characteristic}   % 标记中注明了章节号
- \varphi(t)&= E(e^{itX})=\int^{+\infty}_{-\infty} e^{itx} f(x)dx
-\end{align}
-
-L\'{e}vy 定理在分布函数和特征函数之间搭建了一座桥梁。
-对比 (\ref{DensityCharacteristic}) 和 (\ref{section1:characteristic}) 可见，
-密度函数和特征函数之间的关系非常巧妙。
-
-                                                                                                                 
-\attention 在\TeX 环境里，数学公式的表达是很自然的，绝大多数命令就是英文的数学专有名词或它们的缩写，
-如果你以前读过英文的数学文献，记忆这些命令是不难的。如果你没读过，正好通过记忆这些命令来了解术语。
-
-
-手头有个命令快速寻查表是很方便的，我用的是 Hypertext Help with \LaTeX ，网上可以搜到，是免费的。
-\subsubsection{预置环境}
-相信你已经发现了，模板中预置了有关的环境信息和这些环境下的字体样式。你只要在合适的位置，使用这些环境就能够让你文章变得简洁而美观。环境的样式如下：
-\begin{center}
-
-\begin{tabular}{c|c|c|c}
-\hline\hline
-环境 & 含义 & 环境& 含义\\\hline\hline
-
-%thankspage&致谢页&code&代码\\\hline
-theorem &定理&lemma &引理  \\\hline
-example &例&algorithm &算法  \\\hline
-definition &定义  &axiom &公理  \\\hline
-property &性质  &proposition &命题 \\\hline
-corollary& 推论 &remark &注解  \\\hline
-condition &条件  &conclusion &结论  \\\hline
-assumption &假设  &prove &证明 \\\hline
-proof&证明 &&\\ \hline\hline
-\end{tabular}
-
-\end{center}
-\subsection{图形表格等浮动对象}
-\index{贝叶斯方法}贝叶斯方法主要用于小样本数据分析，它利用参数先验分布和
-后验分布之差异进行统计推断，其一般步骤是：
-
-\begin{enumerate}
- \item 构建概率模型，包括参数的先验分布。
- \item 给定观察数据，计算参数的后验分布。
- \item 分析模型的效果，如有必要，回到第一步。
-\end{enumerate}
-
-\begin{example}
-下面，我们给一个表格的例子，一个图形的例子。
-
-\begin{center}
-\begin{table}[!ht]     % 强制在原位显示表格
+之所以他们热衷于传播这样的信息，我觉得大部分还是“无知者无畏”的作祟。下面需要给图片来说明这个问题，于是进入到图片及表格的处理的话题。
+\subsubsection{在文档中加入图片}
+理论上\LaTeX 可以处理各种各样的图片类型从jpeg到bmp，从pdf到eps都是可以接受的图片处理类型。选择合理的图片类型会提高论文的整体观感，使得最终的排版效果更为优良。而其中以无损压缩格式为优先推荐，原生pdf图片，原生eps图片都是最优的选择。如果实在无法找到矢量图，可以退而求其次地采用png图片或者jpeg格式的图片。但在论文观感上会有很大的差别，体现在论文局部放大300倍以上时颗粒感明显，可以在显示器上看到明显的像素痕迹。为了避免这样的现象，推荐大家：
+\begin{itemize}
+\item \textbf{永远不要偷别人的图片}~~~~这是道德问题，就不多提了。
+\item \textbf{掌握一种数据绘图软件}~~~~Python,MATLAB,Mathmatica都是不错的选择
+\item \textbf{探索示意图绘制的方法}~~~~强烈推荐TikZ绘图语言，Ipe作为绘图工具也不错，学习能力太弱就只有Microsoft Visio了
+\end{itemize}
+图片插入范例
+\begin{figure}[thbp!]
 \centering
-
-\begin{tabular}{l|ccccc|c}
-  $_X$\hspace{3mm} $^Y$&$y_1$&$y_2$&$\cdots$&$y_j$&$\cdots$\\
-\hline
-$x_1$   &$p_{11}$&$p_{12}$&$\cdots$&$p_{1j}$&$\cdots$&$p_{1\cdot}$\\
-$x_2$   &$p_{21}$&$p_{22}$&$\cdots$&$p_{2j}$&$\cdots$&$p_{2\cdot}$\\
-$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$\\
-$x_i$   &$p_{i1}$&$p_{i2}$&$\cdots$&$p_{ij}$&$\cdots$&$p_{i\cdot}$\\
-$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$\\
-\hline
-   &$p_{\cdot 1}$&$p_{\cdot 2}$&$\cdots$&$p_{\cdot j}$&$\cdots$&1
-
-\end{tabular}
-\end{table}
-\end{center}
-
-%在表\ref{marginal distribution} 中，$p_{\cdot %j}=\sum\limits_i p_{ij}$，
-%类似地，$ p_{i\cdot}=\sum\limits_j p_{ij}$。
-\end{example}
-\subsection{插入图片}
-要说\LaTeX 的缺点，其实也不是没有。图文混排能力比较差就是其中一个，相比于其他的商业办公文书软件，\LaTeX 在编辑大量的文字图形内容的时候就显得捉襟见肘了。这时用户就需要其他的专业软件了，比如Adobe公司的InDesign等专业的图文排版软件，来协助我们完成这样的任务了。这同样也是软件和用户双向选择的问题，\LaTeX 的使用人群是以数学物理作为基础的理工科人群。他的强项在于科技文献而非建筑学生的作品集，商科学生的案例答辩，希望用户了解这个常识。
-通过\TeX Studio的图片助手功能，我们可以方便的完成简单的图片内容插入\footnote[1]{图片的大小，位置调整请查询graphicx宏包。}， 支持png，pdf，jpg，eps等格式的图片内容。\\
-\begin{figure}[htbp] 
-\centering
-\includegraphics {figure/logo}
-\caption{武汉理工大学校徽（浮动图片）}
-\label{fig:logo}
+\includegraphics[width=0.6\linewidth]{figure/IMG_1832}
+\caption{\LaTeX 字号错误使用范例}
+\label{fig:IMG_1832}
 \end{figure}
-\footnotemark[1]
-\subsection{如何张贴源码？}
-采用listing宏包可以完成代码的张贴，在控制文件导演区可以更改listing的设置
+
+为了插入这样的图片，我们使用了如下的代码:
+\begin{verbatim}
+\begin{figure}[thbp!]
+\centering
+\includegraphics[width=0.6\linewidth]{figure/IMG_1832}
+\caption{\LaTeX 字号错误使用范例}
+\label{fig:IMG_1832}
+\end{figure}
+\end{verbatim}
+其中第一行的\verb|[thbp!]|是用来规定图片位置的命令\verb|t|表示顶部，\verb|h|表示这里，\verb|b|表示底部，\verb|p|则表示“老子不管了，你想放在哪就放哪儿巴！”\verb|！|则表示“不行，我一定要在这里！”但图片最后放在哪里，还需要看缘分。因为在系统中，确定图片位置的方式是非常死板的，只有位置足够间隔合适图片才会被插入到合适的位置。在第三行中，规定了图片的尺寸，其方式为限定尺寸宽度为0.6倍行线宽。最后是图片的标题和它的标号，有了它们可以很方便地引用一个图片。
+
+如图(\ref{fig:IMG_1832})中显示了一个错误的字号显示的方法，首先是无意义的繁复重定义，其次是汉字处理方法还在使用老旧的CJK方式。这样的所谓官方模板非但起不到传播\LaTeX 排版技术的目的反而误人子弟，让用户难以进行修改和学习。
+\begin{figure}[h]
+\centering
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[auto,scale=1,tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$};
+\draw[thick,->,color=red] (1,0,0)--(1,1.5,0.8) node[midway,name=a]{$ \vec{a} $};
+\draw[thick,->,color=red] (1,0,0)--(1,-0.8,1.5) node[midway,name=b]{$ \vec{b} $};
+\end{tikzpicture}
+\caption{三维向量旋转示意}
+\label{fig:3Drot}
+\end{figure}
+
+而图(\ref{fig:3Drot})则是用TikZ语言“写出来”的图片，读者可以通过在pdf阅读器中放大600倍左右观察两幅图片的细微差别。矢量图虽好，画图不易。图片的来源是学术造诣的一种体现，也是一个人学习能力的体现。这一点上很难有人能够帮到你，需要自己多探索多实践。
+\subsubsection{在文档中加入表格}
+万千表格中，吾最爱三线表。一个表格三条线，足矣。三线表的功力在于简，不要的内容统统丢开，繁文缛节全部扔到垃圾桶。三线表这样写：
+\begin{verbatim}
+\begin{table}[thbp]
+\caption{状态估计算法比较}
+\begin{center}
+\begin{tabular}{cccc}
+\hline  & 卡尔曼滤波 & 神经网络滤波 & 被动无源滤波 \\ 
+\hline 模型类型 & 线性 & 线性 & 非线性  \\ 
+ 参数调校 & 大量 & 几乎没有 & 合理 \\ 
+ 稳定性 & 满足全局稳定性 & 依赖于模型 & 满足子系统稳定性 \\ 
+ 算法开销 & 低且可以借助硬件实现  & 高且大量依赖软件平台  & 低且可以借助硬件实现  \\ 
+ \hline
+\end{tabular} 
+\end{center}
+\label{tb:filter}
+\end{table}
+\end{verbatim}
+\verb|tabular|后的\verb|cccc|表示四个居中的行元素，\verb|llll|则表示四个居左的行元素，\verb|&|分割行元素，\verb|\\|分割列元素，一个\verb|\hline|就是一条线。
+\begin{table}[thbp]
+\caption{状态估计算法比较}
+\begin{center}
+\begin{tabular}{cccc}
+\hline  & 卡尔曼滤波 & 神经网络滤波 & 被动无源滤波 \\ 
+\hline 模型类型 & 线性 & 线性 & 非线性  \\ 
+ 参数调校 & 大量 & 几乎没有 & 合理 \\ 
+ 稳定性 & 满足全局稳定性 & 依赖于模型 & 满足子系统稳定性 \\ 
+ 算法开销 & 低且可以借助硬件实现  & 高且大量依赖软件平台  & 低且可以借助硬件实现  \\ 
+ \hline
+\end{tabular} 
+\end{center}
+\label{tb:filter}
+\end{table}
+\subsection{数学公式}
+美观简洁的数学公式是\LaTeX 中的一大特点，按照数学公式的类型可以分为标号公式和不标号公式两者。不标号公式有有行内公式和行间公式的两种类型分别类似于，行内公式$ e^{i\pi}+1=0 $ 和\[ \dfrac{d\vec{G}}{dt}=\dot{G_x}\vec{i}+\dot{G_y}\vec{j}+\dot{G_z}\vec{k}+G_x\dot{\vec{i}}+G_y\dot{\vec{j}}+G_z\dot{\vec{k}} \]
+他们均不参与公式的编号的排序，通常在学术论文中正文里的重要公式需要编号，编号的公式类型主要有\verb|equation|,\verb|align|,\verb|split|,\verb|eqnarray| 等类型，能够实现等式，方程组，跨行公式的显示。具体的使用方式见\ref{example}
+\subsubsection{一个简单的例子}\label{example}
+船舶运动中所涉及的力和速度都可以理解为矢量，按照矢量旋转的方法可以对于坐标系统进行转化。
+\begin{lemma}
+\label{2Drot} 
+存在一个旋转矩阵使得任何两个模相同的二维向量相互转换
+\end{lemma}
+\begin{proof}
+设定向量$\vec{X}=(a_1,b_1),\vec{Y}=(a_2,b_2)$ 存在$ J $使得$ XJ=Y $同时$X=YJ^{-1}$,其中\[  \sqrt{a_1^{2}+b_1^{2}}=\sqrt{a_2^{2}+b_2^{2}}=R \] 
+由线性方程组的解可知，当$rank(A,Y)=rank(A)=2$时线性方程组有唯一解，此时矩阵$ J $定义为\textit{旋转矩阵}，同时$ J^{-1} $定义为\textit{逆旋转矩阵}.
+\end{proof}
+\begin{theorem}
+\label{rotM}
+平面旋转矩阵$ J $只和两向量之间的夹角$ \theta $有关
+\end{theorem}
+
+\begin{proof}
+$ a_1=Rsin\alpha , b_1=Rcos\alpha~~ .~~ a_2=Rsin\beta ,b_2=Rcos\beta $
+展开  $ a_2 $可以得到
+\[a_2=Rsin\beta=Rsin(\alpha+\theta)=R(sin\alpha cos\theta +cos\alpha sin \theta)\]  
+将$cos\alpha=\dfrac{a_1}{R},sin\alpha=\dfrac{b_1}{R}$代入可以得到\[a_2=a_1 cos\theta-b_1 sin\theta \] 同理\[ b_2=a_1 sin\theta+b_1 cos\theta \] 转换为矩阵形式则为
+ \begin{align} \begin{bmatrix}
+ a_2\\b_2 
+\end{bmatrix}=
+\begin{bmatrix}
+ cos\theta&-sin\theta\\sin\theta& cos\theta
+\end{bmatrix}  
+\begin{bmatrix}
+ a_1\\b_1 
+\end{bmatrix}\end{align}
+ 最终可以得到
+ \begin{align}
+ \label{Jc}
+  {J}_c=\begin{bmatrix} cos\theta&-sin\theta\\sin\theta& cos\theta
+\end{bmatrix} 
+\end{align}
+ 逆时针旋转时
+
+\begin{align}
+\label{Jcc}
+{J}_{cc} =\begin{bmatrix} cos\theta&sin\theta\\-sin\theta& cos\theta
+\end{bmatrix}
+\end{align}
+\end{proof}
+\begin{theorem}
+任何两个模相同的三维向量，可以通过旋转矩阵相互转化
+\end{theorem}
+\begin{figure}[h]
+\centering
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[auto,scale=1,tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$};
+\draw[thick,->,color=red] (1,0,0)--(1,1.5,0.8) node[midway,name=a]{$ \vec{a} $};
+\draw[thick,->,color=red] (1,0,0)--(1,-0.8,1.5) node[midway,name=b]{$ \vec{b} $};
+\end{tikzpicture}
+\caption{三维向量旋转示意}
+\label{fig:3Drot}
+\end{figure}
+
+\subsection{呈列代码}
+采用listing宏包可以列代码，在控制文件导演区可以更改listing的设置
 来符合MATLAB,Python，C++等不同语言的需求。
 \begin{lstlisting}[language=C]
 int main(int argc, char ** argv)

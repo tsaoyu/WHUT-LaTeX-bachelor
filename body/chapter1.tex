@@ -1,10 +1,11 @@
-\section{基本编译环境}
+\pagenumbering{arabic}
+\section{\LaTeX 入门简介}
+\LaTeX 是国际通行的格式化排版系统，在数学界和计算机科学界有着极为广泛的运用。学习\LaTeX 排版规则是每一个科研人员熟悉科研论文格式化写作，提高论文质量的不二之选。
 \subsection{编辑环境}
-
-本模板采用\TeX Studio 2.6.6 作为编辑器，\TeX Live 2013套件作为编译器。
-他们都是跨平台的编译软件，更重要的是他们都是完全免费的软件。 安装的顺序是先安装
-\TeX Live 2013套件，再安装\TeX Studio 编辑器。 \TeX Studio编辑器的优点
-有：
+编译环境由编辑器和编译器两个部分组成， 编辑器的功能和我们常见的写字板差不多，它能够了方便我们处理\TeX 源码明确彼此之间的篇章关系，从而提高排版效率。而编译器则是将\TeX 语言转化为计算机能够理解的二进制代码并最终呈现为我们能够阅读的PDF文档，他们之间相互分工共同完成排版任务。
+\subsubsection{编辑器}
+编辑器的种类非常多，有“所见即所得”的\textbf{LyX},也有linux向的\textbf{Emacs}和\textbf{Vim}，还有伪geek向的\href{http://www.sublimetext.com/}{\textbf{Sublime Text}}，而我自己则偏爱IDE向的
+\href{http://texstudio.sourceforge.net/}{\textbf{\TeX Studio}}.它有着一些令我爱不释手的特性，如：
 \begin{enumerate}
 \item 清晰的组织结构，你可以在屏幕左侧看到他们
 \item 便捷的自动补充功能，只要输入命令的一部分就能够完成撰写
@@ -12,15 +13,46 @@
 \item 贴心的实用工具，矩阵插入助手，表格编辑助手等
 \end{enumerate}
 
-当然还有其他的编译方式，比如WinEdt,LyX,Vim，甚至在线的编辑器。我也会把这份样板
-上传到ShareLaTeX上，这样你就可以方便的使用在线编辑系统了。但不论你使用哪一种编辑软件或者编译器，请务必拥有他们的说明手册。这里，\LaTeX 是使用
-一个个各自独立的宏作为功能的概念的，所以这些说明手册就是宏包的文档。
-比如本模板使用了美国数学协会的\AmS math宏包来完成数学公式的编写，在你需要
-编写数学公式你就需要找到\AmS math宏包的说明文档，文档中会告诉你这个宏包如何
-使用控制语句编写数学公式。这些文档可以在网络上，或者下载的套件中找到。当然，最便捷的途径已经在上面的features里面告诉你了。
-\subsection{如何使用本模板}
-当你获得了所有必需的软件之后，就可以试着编译这个文档了。编译的要求是把thesis.tex设定为主文档，默认编辑器（Default compiler）则使用Xe\LaTeX 。在\TeX Studio 中的设置方法是点击Option之后选择Setup，把Build选项卡里的Default compiler 改为Xe\LaTeX 即可。如果你在编译过程中遇到红色字体提示的错误，
-请拷贝错误的内容到Google中寻找解决他们的方法。此时需要你有着一定的英文阅读
-能力，因为大部分\LaTeX 的文档还仍是英文的。
+每个人都可以选择自己顺手的编辑器，如果你真的非常懒不愿意在如此多的选择中做出一个抉择那么编译器中自带的\textbf{\TeX Works}也是一个不错的选择。
+\subsubsection{编译器}
+编译器一般存在于封装了宏包的各种\TeX 发行包中，按照宏包数量的多少从几十兆字节到若干个G都有。按照操作系统平台的不同，比较流行的发行包有\TeX Live，pro\TeX t和Mac\TeX . 在Windows 平台或者 Linux 平台上常用的是\href{https://www.tug.org/texlive/}{\TeX Live},如果您需要从网络上下载请选择\href{https://www.tug.org/texlive/acquire-iso.html}{ISO镜像}进行下载。国内知名（良心）大学均有镜像FTP下载站,通过他们你可以获得这个3GB左右的ISO包，安装它可以免去您下载各类宏包和寻找文档的麻烦。
+\subsection{尝试编译}
+安装并设置完毕软件环境之后，就可以尝试对于本论文进行编译工作。打开文件夹中的\verb|thesis.tex| 文件，将默认编译器设置为Xe\LaTeX(\TeX Studio 中依次点击Options - Congigure TeXstudio - Built - Default Complier 内选择Xe\LaTeX ，\TeX works 则可以选择左上角的下拉菜单在其中找到Xe\LaTeX )，点击编译按钮就可以开始编译过程了。
 
-如果你还需要有关\LaTeX 的快速入门书籍，首先推荐阅读宏包的帮助文档，其次可以选择一些短小（200页以内）的入门小册子，中文书籍首推北京大学刘海洋编写的《\LaTeX 入门》。相信这些文档和资料可以帮助你快速的入门，发现自己所欠缺的内容之后逐渐学习最终成为\LaTeX 排版的专家。 
+正常编译结束之后，文件夹中会出现一个\verb|thesis.pdf|的文件同时编辑器也会自动打开该文件生成一个精美的预览。你可以对比自己编译出来的成果与本文件之间的差异，来确定编译器和编辑器是否已经设置妥当。
+
+\subsection{傻瓜步骤}
+先\href{https://www.tug.org/texlive/acquire-iso.html}{下载}\TeX 发行包（内含编译器和相关宏包及文档）,安装这个发行包大概需要20分钟左右的时间，安装期间请关闭杀毒软件以保证组件的顺利注册。
+使用自带的编辑器或者下载\href{http://texstudio.sourceforge.net/}{\textbf{\TeX Studio}},作为默认编辑器使用。打开\verb|thesis.tex|，并设置编译器为Xe\LaTeX 再进行一次编译。如果遇到无法编译的问题请注意以下技术细节：
+
+相关路径设置是否正确，在\textbf{\TeX Studio}的Options - Congigure TeXstudio - Commands 中检查路径，正确的路径形式应该类似于
+
+\begin{verbatim}
+"D:/Program Files/texlive/2013/bin/win32/latex.exe"
+ -src -interaction=nonstopmode %.tex
+\end{verbatim}
+
+文件名中是否包含非法字符，很不幸中文也是非法字符的一类。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

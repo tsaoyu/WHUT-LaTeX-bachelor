@@ -7,12 +7,14 @@ A level-1 auxiliary file: body/chapter1.aux
 A level-1 auxiliary file: body/chapter2.aux
 A level-1 auxiliary file: body/chapter3.aux
 A level-1 auxiliary file: body/chapter4.aux
+A level-1 auxiliary file: body/appendices.aux
+A level-1 auxiliary file: body/acknowledge.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibfile.bib
 You've used 2 entries,
             2975 wiz_defined-function locations,
-            704 strings with 6049 characters,
+            706 strings with 6088 characters,
 and the built_in function-call counts, 3186 in all, are:
 = -- 327
 > -- 7
