@@ -23,18 +23,11 @@
 \providecommand{\bibdate}[1]{#1}
 \providecommand{\biburl}[1]{\url{#1}}
 
-\bibitem{王勇姚萍-197}
-\bibauthor{王勇\@, 姚萍\@, 王岚, et~al}\@.
-  \bibtitle{LaTeX与方正书版排版数学论文探讨}\bibmark{[J]}\@.
-  \bibjournal{中国科技期刊研究}\@, \bibyear{2012}\@,
-  \bibvolume{23}\bibnumber{(6)}\thinspace{}\textnormal{:
-  }\bibpages{1036\thinspace{}\textnormal{--}\thinspace{}1039}\@.
-
-\bibitem{吴昉张页-198}
-\bibauthor{吴昉\@, 张页}\@.
-  \bibtitle{聆听字体之声——由阿拉伯字体艺术浅议字体设计课程教学改良}\bibmark{[J]}\@.
-  \bibjournal{艺术教育}\@,
-  \bibyear{2010}\bibnumber{(2)}\thinspace{}\textnormal{:
-  }\bibpages{18\thinspace{}\textnormal{--}\thinspace{}19}\@.
+\bibitem{刘运来-199}
+\bibauthor{刘运来}\@.
+  \bibtitle{浅谈字体艺术在封面设计中的应用——从民国时期书刊封面字体设计说开去}\bibmark{[J]}\@.
+  \bibjournal{中国编辑}\@,
+  \bibyear{2011}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{43\thinspace{}\textnormal{--}\thinspace{}48}\@.
 
 \end{thebibliography}

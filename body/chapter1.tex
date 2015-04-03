@@ -4,7 +4,7 @@
 \subsection{编辑环境}
 编译环境由编辑器和编译器两个部分组成， 编辑器的功能和我们常见的写字板差不多，它能够了方便我们处理\TeX 源码明确彼此之间的篇章关系，从而提高排版效率。而编译器则是将\TeX 语言转化为计算机能够理解的二进制代码并最终呈现为我们能够阅读的PDF文档，他们之间相互分工共同完成排版任务。
 \subsubsection{编辑器}
-编辑器的种类非常多，有“所见即所得”的\textbf{LyX},也有linux向的\textbf{Emacs}和\textbf{Vim}，还有伪geek向的\href{http://www.sublimetext.com/}{\textbf{Sublime Text}}，而我自己则偏爱IDE向的
+编辑器的种类非常多，有“所见即所得”的\textbf{LyX},也有Linux向的\textbf{Emacs}和\textbf{Vim}，还有伪geek向的\href{http://www.sublimetext.com/}{\textbf{Sublime Text}}，而我自己则偏爱IDE向的
 \href{http://texstudio.sourceforge.net/}{\textbf{\TeX Studio}}.它有着一些令我爱不释手的特性，如：
 \begin{enumerate}
 \item 清晰的组织结构，你可以在屏幕左侧看到他们
@@ -15,24 +15,36 @@
 
 每个人都可以选择自己顺手的编辑器，如果你真的非常懒不愿意在如此多的选择中做出一个抉择那么编译器中自带的\textbf{\TeX Works}也是一个不错的选择。
 \subsubsection{编译器}
-编译器一般存在于封装了宏包的各种\TeX 发行包中，按照宏包数量的多少从几十兆字节到若干个G都有。按照操作系统平台的不同，比较流行的发行包有\TeX Live，pro\TeX t和Mac\TeX . 在Windows 平台或者 Linux 平台上常用的是\href{https://www.tug.org/texlive/}{\TeX Live},如果您需要从网络上下载请选择\href{https://www.tug.org/texlive/acquire-iso.html}{ISO镜像}进行下载。国内知名（良心）大学均有镜像FTP下载站,通过他们你可以获得这个3GB左右的ISO包，安装它可以免去您下载各类宏包和寻找文档的麻烦。
+编译器一般存在于封装了宏包的各种\TeX 发行包中，按照宏包数量的多少从几十兆字节到若干个G都有。按照操作系统平台的不同，比较流行的发行包有\TeX Live，pro\TeX t和Mac\TeX . 在Windows 平台或者 Linux 平台上常用的是\href{https://www.tug.org/texlive/}{\TeX Live},如果您需要从网络上下载请选择\href{https://www.tug.org/texlive/acquire-iso.html}{ISO镜像}进行下载。国内知名大学均有镜像FTP下载站,通过他们你可以获得这个3GB左右的ISO包，安装它可以免去您下载各类宏包和寻找文档的麻烦。
 \subsection{尝试编译}
-安装并设置完毕软件环境之后，就可以尝试对于本论文进行编译工作。打开文件夹中的\verb|thesis.tex| 文件，将默认编译器设置为Xe\LaTeX(\TeX Studio 中依次点击Options - Congigure TeXstudio - Built - Default Complier 内选择Xe\LaTeX ，\TeX works 则可以选择左上角的下拉菜单在其中找到Xe\LaTeX )，点击编译按钮就可以开始编译过程了。
+\subsubsection{Windows}
+安装并设置完毕软件环境之后，就可以尝试对于本论文进行编译工作。打开文件夹中的\verb|thesis.tex| 文件，将默认编译器设置为Xe\LaTeX(\TeX Studio 中依次点击Options - Configure TeXstudio - Built - Default Complier 内选择Xe\LaTeX ，\TeX works 则可以选择左上角的下拉菜单在其中找到Xe\LaTeX )，点击编译按钮就可以开始编译过程了。
 
 正常编译结束之后，文件夹中会出现一个\verb|thesis.pdf|的文件同时编辑器也会自动打开该文件生成一个精美的预览。你可以对比自己编译出来的成果与本文件之间的差异，来确定编译器和编辑器是否已经设置妥当。
+\subsubsection{Mac OS X}
 
-\subsection{傻瓜步骤}
+在OS X系统下，由于系统内字体的区别，本模板会遇到一些编译上的问题。 我们需要手动调整一下字体的设置，以正常编译模板， 具体修改方式可以参见\href{http://www.zhihu.com/question/22906637}{知乎问答}。 
+
+问答的第四步可能需要一些修改，
+\begin{verbatim}
+	cd /usr/local/texlive/2014/texmf-dist/tex/texlive/ctex
+\end{verbatim}
+
+\subsubsection{Linux}
+本模板在Ubuntu 14.04 以及12.04 长期稳定支持版上均编译通过。
+
+\subsection{简单步骤}
 先\href{https://www.tug.org/texlive/acquire-iso.html}{下载}\TeX 发行包（内含编译器和相关宏包及文档）,安装这个发行包大概需要20分钟左右的时间，安装期间请关闭杀毒软件以保证组件的顺利注册。
 使用自带的编辑器或者下载\href{http://texstudio.sourceforge.net/}{\textbf{\TeX Studio}},作为默认编辑器使用。打开\verb|thesis.tex|，并设置编译器为Xe\LaTeX 再进行一次编译。如果遇到无法编译的问题请注意以下技术细节：
 
-相关路径设置是否正确，在\textbf{\TeX Studio}的Options - Congigure TeXstudio - Commands 中检查路径，正确的路径形式应该类似于
+相关路径设置是否正确，在\textbf{\TeX Studio}的Options - Configure TeXstudio - Commands 中检查路径，正确的路径形式应该类似于
 
 \begin{verbatim}
 "D:/Program Files/texlive/2013/bin/win32/latex.exe"
  -src -interaction=nonstopmode %.tex
 \end{verbatim}
 
-文件名中是否包含非法字符，很不幸中文也是非法字符的一类。
+
 
 
 
