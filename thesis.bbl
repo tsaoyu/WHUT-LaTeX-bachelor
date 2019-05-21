@@ -1,33 +1,58 @@
-\begin{thebibliography}{1}
-\providecommand{\bibauthor}[1]{#1}
-\providecommand{\bibeditor}[1]{#1}
-\providecommand{\bibtranslator}[1]{#1}
-\providecommand{\bibtitle}[1]{#1}
-\providecommand{\bibbooktitle}[1]{#1}
-\providecommand{\bibjournal}[1]{#1}
-\providecommand{\bibmark}[1]{#1}
-\providecommand{\bibcountry}[1]{#1}
-\providecommand{\bibpatentid}[1]{#1}
-\providecommand{\bibedition}[1]{#1}
-\providecommand{\biborganization}[1]{#1}
-\providecommand{\bibaddress}[1]{#1}
-\providecommand{\bibpublisher}[1]{#1}
-\providecommand{\bibinstitution}[1]{#1}
-\providecommand{\bibschool}[1]{#1}
-\providecommand{\bibvolume}[1]{#1}
-\providecommand{\bibnumber}[1]{#1}
-\providecommand{\bibpages}[1]{#1}
-\providecommand{\bibmodifydate}[1]{#1}
-\providecommand{\bibcitedate}[1]{#1}
-\providecommand{\bibyear}[1]{#1}
-\providecommand{\bibdate}[1]{#1}
-\providecommand{\biburl}[1]{\url{#1}}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{刘运来-199}
-\bibauthor{刘运来}\@.
-  \bibtitle{浅谈字体艺术在封面设计中的应用——从民国时期书刊封面字体设计说开去}\bibmark{[J]}\@.
-  \bibjournal{中国编辑}\@,
-  \bibyear{2011}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{43\thinspace{}\textnormal{--}\thinspace{}48}\@.
 
-\end{thebibliography}
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{刘运来-199}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b27fbec358fc198635e32e1360bff152}{%
+           family={刘运来},
+           familyi={刘\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \strng{namehash}{b27fbec358fc198635e32e1360bff152}
+      \strng{fullhash}{b27fbec358fc198635e32e1360bff152}
+      \strng{bibnamehash}{b27fbec358fc198635e32e1360bff152}
+      \strng{authorbibnamehash}{b27fbec358fc198635e32e1360bff152}
+      \strng{authornamehash}{b27fbec358fc198635e32e1360bff152}
+      \strng{authorfullhash}{b27fbec358fc198635e32e1360bff152}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{图书封面的字体设计是一门独立的艺术，在封面设计中占有重要的地位。文章以民国时期书刊封面字体设计为例，从以丰富多彩的字体进行封面设计，字体与图像组合进行封面设计，字体与封面材质、工艺结合进行封面设计三个方面．对字体艺术在书刊封面设计中的运用进行了探讨。}
+      \field{journaltitle}{中国编辑}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{title}{浅谈字体艺术在封面设计中的应用——从民国时期书刊封面字体设计说开去}
+      \field{usera}{J}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{43\bibrangedash 48}
+      \range{pages}{6}
+      \keyw{字体艺术; 封面设计; 运用}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

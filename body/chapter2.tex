@@ -7,18 +7,25 @@
 \end{verbatim}
 由于采用了\verb|ctex|的\verb|article|类作为论文的基本类，所以定义标题的层级最多为二级标题。当你的论文出现三级标题如\verb|2.1.1.1|的时候，请考虑修改文章层级结构以适应格式化排版的要求。（四级标题多出现于书籍以及科技专著中，毕业论文作为文档类其出现此类三级标题的情况较为罕见）。在一个低级标题之后出现的一个高级标题会使得文档当前内容跳出作用域，通过这样的方式整个文章的整体脉络就可以很清晰地显现出来。
 \subsection{字体字号的控制}
-字体字号的处理是借助了\href{http://mirror.hust.edu.cn/CTAN/language/chinese/ctex/doc/ctex.pdf}{ctex}宏包实现的，仔细阅读该文档你能在中文格式处理方面节省许多时间。在宏包中对于处理字体和字号的方法进行详细的阐述。在我们熟知的排版系统中，形式和内容是一个密不可分的整体，两者相生相伴无法分离。从我们写下一段话，并选中这段话然后再设定字体和字号开始形式已经开始附加到我们想要表达的内容中了。但是在\LaTeX 中，所有的内容（也就是正文及相关附录）是不包含任何关于格式的信息的。这样就做到了形式与内容的彻底分离，是\LaTeX 区别于任何一个排版系统的根本原因。
+字体字号的处理是借助了\href{http://mirror.hust.edu.cn/CTAN/language/chinese/ctex/ctex.pdf}{ctex}宏包实现的，仔细阅读该文档你能在中文格式处理方面节省许多时间。在宏包中对于处理字体和字号的方法进行详细的阐述。在我们熟知的排版系统中，形式和内容是一个密不可分的整体，两者相生相伴无法分离。从我们写下一段话，并选中这段话然后再设定字体和字号开始形式已经开始附加到我们想要表达的内容中了。但是在\LaTeX 中，所有的内容（也就是正文及相关附录）是不包含任何关于格式的信息的。这样就做到了形式与内容的彻底分离，是\LaTeX 区别于任何一个排版系统的根本原因。
 
 实现内容与形式的剥离是一个痛苦的过程，我们需要摒弃我们懒惰的直觉并开始高度抽象化的思考，通过这样一个过程等到内容与形式再度统一。
 \subsubsection{字体}
 根据中文汉字支持宏包ctexart的参考文档，模板中预置的常用字体一共有五种，他们分别是：宋体，黑体，仿宋，楷书， 隶书。对应的控制方式如下：
+
+\begin{table}[htbp]
 \begin{center}
-\begin{tabular}{ccccc}
-\hline \rule[-2ex]{0pt}{5.5ex} { 宋体} & { 黑体} & { 仿宋} & { 隶书} & {楷书} \\ 
-\hline \rule[-2ex]{0pt}{5.5ex} \textbackslash songti &\textbackslash  heiti  & \textbackslash fangsong & \textbackslash lishu & \textbackslash kaishu \\ 
-\hline 
+\begin{tabular}{cccccc}
+\toprule 
+ { 宋体} & { 黑体} & { 仿宋} & { 隶书} & {楷书} &{华文中宋}\\ 
+\midrule 
+\textbackslash songti &\textbackslash  heiti  & \textbackslash fangsong & \textbackslash lishu & \textbackslash kaishu & \textbackslash zhongsong\\ 
+\bottomrule 
 \end{tabular}  
 \end{center}
+\end{table}
+
+
 这些字体基本满足了武汉理工大学本科生毕业论文中所要求的字体的需求。
 
 
