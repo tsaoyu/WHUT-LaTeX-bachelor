@@ -5,8 +5,11 @@
 %  tsaoyu@tsaoyu.com
 %  Last Modify Date Feb.6,2014
 %%=======================================
-\documentclass[cs4size,a4paper]{ctexart}   
+\documentclass[cs4size,a4paper]{ctexart}
 %==================== 数学符号公式 ============
+\usepackage{xeCJK}
+\newcommand{\zhongsong}{\CJKfontspec{STZhongsong}}%华文中宋，请自行下载字体并安装
+
 \usepackage{amsmath}                 % AMS LaTeX宏包
 %\usepackage{amssymb}                % 用来排版漂亮的数学公式
 %\usepackage{amsbsy}
@@ -17,13 +20,23 @@
 \usepackage{bm}                      % 数学公式中的黑斜体
 \usepackage{bbding,manfnt}           % 一些图标，如 \dbend
 \usepackage{lettrine}                % 首字下沉，命令\lettrine
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}  %配置gb7714-2015引用格式，使用biber编译，自行安装biber
+\addbibresource{bibfile.bib}                            %添加bib file
 \def\attention{\lettrine[lines=2,lraise=0,nindent=0em]{\large\textdbend\hspace{1mm}}{}}
 \usepackage{longtable}
 \usepackage[toc,page]{appendix}
 \usepackage{geometry}                % 页边距调整
-\geometry{top=3.0cm,bottom=2.7cm,left=2.5cm,right=2.5cm}
+\geometry{top=2.5cm,bottom=2cm,left=2.5cm,right=2cm}
 %\usepackage{relsize}                % 调整公式字体大小：\mathsmaller,\mathlarger
 %\usepackage{caption2}               % 浮动图形和表格标题样式
+\usepackage{booktabs}                %三线表上下加粗
+\usepackage{diagbox}                 % 分类表头
+%%%使用带圈数字作为教主
+\usepackage{pifont}
+\usepackage[symbol*,stable]{footmisc}
+\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
+{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\setfnsymbol{circled}
 %====================公式按章编号==========================
 \numberwithin{equation}{section}
 \numberwithin{table}{section}
@@ -32,7 +45,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}  
-\fancyhead[C]{\zihao{5}  \kaishu 武汉理工大学毕业设计（论文）}
+\fancyhead[C]{\zihao{5}  \songti 武汉理工大学毕业设计（论文）}
 \fancyfoot[C]{~\zihao{5} \thepage~}
 \renewcommand{\headrulewidth}{0.65pt} 
 \CTEXsetup[format={\centering\bfseries\zihao{-2}},name={第, 章}]{section}
@@ -44,7 +57,13 @@
 \usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
 \usepackage{hyperref}                % 交叉引用
 \usepackage{caption}
+
+% set up labelformat and labelsep for figure
+\captionsetup{labelsep=quad}
 \captionsetup{figurewithin=section}
+
+\renewcommand{\thesubfigure}{(\arabic{subfigure})} %还可设置图编号显示格式，加括号或者不加括号
+
 %==================== 源码和流程图 =====================
 \usepackage{listings}                % 粘贴源代码
 \usepackage{tikz}                    
@@ -52,7 +71,7 @@
 \usetikzlibrary{shapes,arrows,positioning}
 %===================   正文开始    ===================
 \begin{document}
-\bibliographystyle{gbt7714-2005}     %论文引用格式
+%\bibliographystyle{gbt7714-2005}     %论文引用格式
 %===================  定理类环境定义 ===================
 \newtheorem{example}{例}              % 整体编号
 \newtheorem{algorithm}{算法}
@@ -91,9 +110,11 @@
 \include{body/chapter2}
 \include{body/chapter3}
 \include{body/chapter4}
+\include{body/chapter5}
 %============= 参考文献 =====================
 \addcontentsline{toc}{section}{参考文献}
-\bibliography{bibfile}
+\printbibliography
+%\bibliography{bibfile}
 \clearpage
 \include{body/appendices}
 %=============  致谢  ======================
