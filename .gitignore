@@ -23,6 +23,8 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.xml
+/.vscode/
 
 
 #################
