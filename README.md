@@ -15,15 +15,13 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 使用这个模板可以使你从无聊的格式限制中解脱出来，从而更专注地阐述自己的想法。
 希望本模板能够帮助你入门LaTeX, 如果你有关于本模板的良好意见和建议，请在顶栏的问题(issue)一栏中提出。
 
-* 本模板尚存在许多问题，比如目录字号与间距的修改尚未实现，参考文献字号未修改。
 
 ## 使用方法
 
-* 建议使用vscode的latex workshop插件进行编辑，编译链设置如下：
+* 建议使用[VS Code](https://code.visualstudio.com/)的[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件进行编辑，biblatex编译后端使用[biber](http://biblatex-biber.sourceforge.net/)，编译链设置如下：
 ```
  "latex-workshop.latex.tools": [
         {
-            // 编译工具和命令
             "name": "xelatex",
             "command": "xelatex",
             "args": [
@@ -41,13 +39,7 @@ All questions and suggestions are welcomed, please file an issue in this repo.
                 "%DOCFILE%"
             ]
         },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ]
-        }
+
     ],
     "latex-workshop.latex.recipes": [
         {

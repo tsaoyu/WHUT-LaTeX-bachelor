@@ -22,8 +22,13 @@
 *.mtc
 *.mtc1
 *.out
+*.bcf
 *.synctex.gz
 *.xml
+*.log
+*.out
+*.gz
+
 /.vscode/
 
 
