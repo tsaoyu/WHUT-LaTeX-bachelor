@@ -1,16 +1,12 @@
-%%=======================================
-%  WHUT Bachelor Thesis v 0.1b
-%  
-%  Tsao Yu
-%  tsaoyu@tsaoyu.com
-%  Last Modify Date Feb.6,2014
-%%=======================================
-\documentclass[cs4size,a4paper]{ctexart}
+\documentclass[zihao=-4,a4paper]{ctexart}
 %==================== 数学符号公式 ============
 \usepackage{xeCJK}
 \newcommand{\zhongsong}{\CJKfontspec{STZhongsong}}%华文中宋，请自行下载字体并安装
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 
 \usepackage{amsmath}                 % AMS LaTeX宏包
+\usepackage[ruled]{algorithm2e}              %伪代码
 %\usepackage{amssymb}                % 用来排版漂亮的数学公式
 %\usepackage{amsbsy}
 \usepackage[style=1]{mdframed}
@@ -20,8 +16,8 @@
 \usepackage{bm}                      % 数学公式中的黑斜体
 \usepackage{bbding,manfnt}           % 一些图标，如 \dbend
 \usepackage{lettrine}                % 首字下沉，命令\lettrine
-\usepackage[backend=biber,style=gb7714-2015]{biblatex}  %配置gb7714-2015引用格式，使用biber编译，自行安装biber
-\addbibresource{bibfile.bib}                            %添加bib file
+\usepackage{gbt7714}                 %配置gb7714引用格式
+
 \def\attention{\lettrine[lines=2,lraise=0,nindent=0em]{\large\textdbend\hspace{1mm}}{}}
 \usepackage{longtable}
 \usepackage[toc,page]{appendix}
@@ -36,7 +32,7 @@
 \usepackage[symbol*,stable]{footmisc}
 \DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
 {\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
-\setfnsymbol{circled}
+\setfnsymbol{circled}               %带圈脚注
 %====================公式按章编号==========================
 \numberwithin{equation}{section}
 \numberwithin{table}{section}
@@ -48,16 +44,25 @@
 \fancyhead[C]{\zihao{5}  \songti 武汉理工大学毕业设计（论文）}
 \fancyfoot[C]{~\zihao{5} \thepage~}
 \renewcommand{\headrulewidth}{0.65pt} 
-\CTEXsetup[format={\centering\bfseries\zihao{-2}},name={第, 章}]{section}
-\CTEXsetup[nameformat={\bfseries\zihao{3}}]{subsection}
-\CTEXsetup[nameformat={\bfseries\zihao{4}}]{subsubsection}
+\ctexset{
+    section = {
+        format = \centering\bfseries\zihao{-2} \heiti,
+        name = {第, 章}
+    },
+    subsection = {
+        nameformat = \bfseries\zihao{3} \heiti
+    },
+    subsubsection = {
+        nameformat = \bfseries\zihao{4} \heiti
+    }
+}
 %================== 图形支持宏包 =========================
 \usepackage{subfigure}
 \usepackage{graphicx}                % 嵌入png图像
 \usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
 \usepackage{hyperref}                % 交叉引用
 \usepackage{caption}
-
+\usepackage{multirow}                  %合并表格
 % set up labelformat and labelsep for figure
 \captionsetup{labelsep=quad}
 \captionsetup{figurewithin=section}
@@ -71,10 +76,9 @@
 \usetikzlibrary{shapes,arrows,positioning}
 %===================   正文开始    ===================
 \begin{document}
-%\bibliographystyle{gbt7714-2005}     %论文引用格式
 %===================  定理类环境定义 ===================
 \newtheorem{example}{例}              % 整体编号
-\newtheorem{algorithm}{算法}
+%\newtheorem{algorithm}{算法}
 \newtheorem{theorem}{定理}            % 按 section 编号
 \newtheorem{definition}{定义}
 \newtheorem{axiom}{公理}
@@ -95,7 +99,7 @@
 \renewcommand{\tablename}{表}
 \renewcommand{\appendixname}{附录}
 \renewcommand{\proofname}{证明}
-\renewcommand{\algorithm}{算法} 
+%\renewcommand{\algorithm}{算法} 
 %============== 封皮和前言 =================
 \input{body/cover}
 \pagestyle{plain}
@@ -113,8 +117,7 @@
 \include{body/chapter5}
 %============= 参考文献 =====================
 \addcontentsline{toc}{section}{参考文献}
-\printbibliography
-%\bibliography{bibfile}
+{\zihao{5} \songti \bibliography{bibfile}}
 \clearpage
 \include{body/appendices}
 %=============  致谢  ======================
