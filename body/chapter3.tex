@@ -16,11 +16,7 @@
 \end{verbatim}
 如果需要引用该文献，可以直接使用\verb|\cite{马晓丽-200}|的方法进行引用。文章最后会自动根据GBT7714-2015规范来列出这些文献。
 
-关于有些文献中未标明出版地址与出版者等问题，可以通过注释gb7714宏包中的bst文件来做到隐藏出版地。在texlive2019中，可以修改
-\begin{verbatim}
-   .\texlive\2019\texmf-dist\bibtex\bst\gbt7714
-\end{verbatim}
-文件夹中的两个bst文件，将其中的  “\#1 'show.missing.address.publisher :=” 前面的1改为0。具体修改可以查阅宏包文档。
+关于文献中出现[出版地不详]等问题，根目录下的两个bst文件默认设置忽略出版地等信息。如不需要该设置，可将其删除，使用texlive自带的宏包进行控制。
 \subsection{转为Word}
 Microsoft Word is the last thing I want to use before I die.
 --Knuth
