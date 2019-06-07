@@ -18,10 +18,11 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 
 ## 使用方法
 
-* 建议使用[VS Code](https://code.visualstudio.com/)的[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件进行编辑，biblatex编译后端使用[biber](http://biblatex-biber.sourceforge.net/)，编译链设置如下：
+* 建议使用[VS Code](https://code.visualstudio.com/)的[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件进行编辑，编译链设置如下：
 ```
- "latex-workshop.latex.tools": [
+    "latex-workshop.latex.tools": [
         {
+            // 编译工具和命令
             "name": "xelatex",
             "command": "xelatex",
             "args": [
@@ -39,6 +40,13 @@ All questions and suggestions are welcomed, please file an issue in this repo.
                 "%DOCFILE%"
             ]
         },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
 
     ],
     "latex-workshop.latex.recipes": [
@@ -49,15 +57,15 @@ All questions and suggestions are welcomed, please file an issue in this repo.
             ]
         },
         {
-            "name": "xelatex -> biber -> xelatex*2",
+            "name": "xelatex -> bibtex -> xelatex*2",
             "tools": [
                 "xelatex",
-                "biber",
+                "bibtex",
                 "xelatex",
                 "xelatex"
             ]
         },
-    ],
+    ]
 ```
 * 设定主文档为`thesis.tex`，尝试进行编译
 
